@@ -9,7 +9,8 @@ var characters = [
 
 var buttons = document.querySelectorAll('button')
 var charDiv = document.querySelectorAll('.character')
-var input = document.querySelector('input')
+var input = document.querySelector('.input-field')
+var submit = document.querySelector('.submit-button')
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function (evt) {
@@ -21,3 +22,13 @@ for (let i = 0; i < buttons.length; i++) {
     charDiv[i].appendChild(paragraph)
   })
 }
+
+submit.addEventListener('click', function (evt) {
+  evt.preventDefault()
+  console.log(input.value)
+  for (let i = 0; i < charDiv.length; i++) {
+    if (input.value !== characters[i].name) {
+      charDiv[i].style.display = 'none'
+    }
+  }
+})
