@@ -35,7 +35,14 @@ img {
 }
 
 .more-info {
-    display: block;
+    display: inline-block;
+    margin: 10px auto;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+}
+
+.alive-or-dead {
+    display: inline-block;
     margin: 10px auto;
     font-family: 'Ubuntu', sans-serif;
     font-size: 18px;

@@ -7,10 +7,11 @@ var characters = [
   {name: 'Jon Snow', bio: 'Said to be the bastard son of Ned Stark and a mystery woman, Jon is slightly ostracized from the rest of the Stark kids.', status: 'alive'}
 ]
 
-var buttons = document.querySelectorAll('button')
+var buttons = document.querySelectorAll('.more-info')
 var charDiv = document.querySelectorAll('.character')
 var input = document.querySelector('.input-field')
 var submit = document.querySelector('.submit-button')
+// var status = document.querySelector('.alive-or-dead')
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function (evt) {
@@ -32,3 +33,8 @@ submit.addEventListener('click', function (evt) {
     }
   }
 })
+
+// status.addEventListener('click', function (evt) {
+//   evt.preventDefault()
+
+// })
