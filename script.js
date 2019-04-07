@@ -11,7 +11,7 @@ var buttons = document.querySelectorAll('.more-info')
 var charDiv = document.querySelectorAll('.character')
 var input = document.querySelector('.input-field')
 var submit = document.querySelector('.submit-button')
-// var status = document.querySelector('.alive-or-dead')
+var lifeStatus = document.querySelectorAll('.alive-or-dead')
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function (evt) {
@@ -34,7 +34,22 @@ submit.addEventListener('click', function (evt) {
   }
 })
 
-// status.addEventListener('click', function (evt) {
-//   evt.preventDefault()
-
-// })
+for (let i = 0; i < lifeStatus.length; i++) {
+  lifeStatus[i].addEventListener('click', function (evt) {
+    evt.preventDefault()
+    console.log(characters[i].status)
+    if (characters[i].status === 'alive') {
+      let h2 = document.createElement('h2')
+      let alive = document.createTextNode('STILL ALIVE!')
+      h2.style.color = 'green'
+      h2.appendChild(alive)
+      charDiv[i].appendChild(h2)
+    } else {
+      let h2 = document.createElement('h2')
+      let dead = document.createTextNode('SORRY, YOU DEAD')
+      h2.style.color = 'red'
+      h2.appendChild(dead)
+      charDiv[i].appendChild(h2)
+    }
+  })
+}
