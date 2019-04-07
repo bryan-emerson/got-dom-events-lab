@@ -6,3 +6,18 @@ var characters = [
   {name: 'Arya Stark', bio: 'Arya has no desire to grow up in the confines of ladyship — she prefers swords to sewing.', status: 'alive'},
   {name: 'Jon Snow', bio: 'Said to be the bastard son of Ned Stark and a mystery woman, Jon is slightly ostracized from the rest of the Stark kids.', status: 'alive'}
 ]
+
+var buttons = document.querySelectorAll('button')
+var charDiv = document.querySelectorAll('.character')
+var input = document.querySelector('input')
+
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener('click', function (evt) {
+    evt.preventDefault()
+    console.log(characters[i].name)
+    let paragraph = document.createElement('p')
+    let bio = document.createTextNode(characters[i].bio)
+    paragraph.appendChild(bio)
+    charDiv[i].appendChild(paragraph)
+  })
+}
