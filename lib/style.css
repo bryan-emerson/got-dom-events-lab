@@ -9,6 +9,14 @@ h1 {
   font-size: 50px;
 }
 
+p {
+  display: none;
+}
+
+.visible {
+  display: none;
+}
+
 .got-characters {
   display: flex;
   flex-wrap: wrap;
